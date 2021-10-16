@@ -30,7 +30,7 @@ for item in soup.find_all('div', attrs={'class': 'classified fo iyp-list'}):
     address_c = item.find('p', attrs={'class': 'gray large sub-title'})
     address = address_c.find('a', attrs={'class': 'add-tooltip'})
     f = address.get('title', 'No title attribute')
-    result.append[[name, f]]
+    result.append([name, f])
 with open('companydetails.csv', 'w', encoding='utf-8', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
